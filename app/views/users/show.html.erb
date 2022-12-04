@@ -1,0 +1,15 @@
+<div>
+  <h1>User info</h1>
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <p>name：<%= @user.name %></p>
+  <p>introduction</p>
+</div>
+
+<% @books.each do |book| %>
+<div>
+  <%= image_tag book.get_image %>
+  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
+  <p>Title：<%=link_to book.title, book_path(book.id) %></p>
+  <p>Opinion：<%= book.body %></p>
+</div>
+<% end %>
