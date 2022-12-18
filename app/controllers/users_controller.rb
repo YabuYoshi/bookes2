@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = current_user
+    @book = Book.new
   end
 
   def show
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
     user_id = params[:id].to_i
     login_user_id = current_user.id
     if(user_id != login_user_id)
-      redirect_to post_images_path
+      redirect_to user_path(current_user)
     end
   end
 end

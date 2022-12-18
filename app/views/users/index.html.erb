@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container px-5 px-sm-0">
  <div class="row">
-  <div class="col-lg-4">
+  <div class="col-md-3">
    <div>
-   <%= render 'user', user: @user %>
+   <%= render 'user', user: @user, book: @book %>
    </div>
- </div>
+  </div>
 
-  <div class="col-lg-8">
+  <div class="col-md-8 offset-md-1">
     <table class="table table-striped">
     <h1>Users</h1>
      <thead>
@@ -21,8 +21,9 @@
        <% @users.each do |user| %>
         <tr>
         <%= link_to user_path(user.id) do %>
-          <td><%= image_tag user.get_profile_image(100,100) %></td>
-          <td><%= @user.name %></td>
+          <td><%= image_tag user.get_profile_image(100,100) %>
+          </td>
+          <td><%= user.name %></td>
           <td><%= link_to 'Show', user %></td>
           <% end %>
         </tr>
