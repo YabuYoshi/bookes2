@@ -1,1 +1,12 @@
-<h1>Topページです</h1>
+<div>
+  <%= flash[:notice] %>
+</div>
+<h1><strong>welcome to 📚 Bookers !!</strong></h1>
+<p>
+  In <strong>📚Bookers</strong>, <br />
+  you can share and exchange your opinions, inpressions, and emotions <br />
+  about various books!
+</p>
+
+<%= link_to 'Log in', "/users/sign_in", class:"btn btn-primary" %>
+<%= link_to 'Sign up', "/users/sign_up", class:"btn btn-success" %>
